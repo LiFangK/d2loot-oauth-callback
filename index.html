@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; connect-src 'none'">
+  <title>返回 D2 Loot Tool</title>
+  <style>
+    body{background:#101010;color:#e6e6e6;font:16px/1.7 system-ui,sans-serif;max-width:520px;margin:12vh auto;padding:24px}
+    h1{font-size:28px}p{color:#959595}a{display:inline-block;background:#303030;color:#f3f3f3;padding:12px 24px;border:1px solid #888;text-decoration:none;font-weight:600}a:focus-visible{outline:2px solid #ddd;outline-offset:4px}
+    [hidden]{display:none}
+  </style>
+</head>
+<body>
+  <h1 id="title">正在检查授权结果…</h1>
+  <p id="message">请保持桌面软件打开。</p>
+  <a id="return" hidden>返回 D2 Loot Tool</a>
+  <script>
+    (() => {
+      const query = new URLSearchParams(location.search);
+      // Remove credentials from the visible URL before rendering or opening the app.
+      history.replaceState(null, '', location.pathname);
+      const title = document.getElementById('title');
+      const message = document.getElementById('message');
+      const link = document.getElementById('return');
+      const denied = query.getAll('error').length === 1 && !!query.get('error') && !query.has('code');
+      const granted = query.getAll('code').length === 1 && !!query.get('code')?.trim() && !query.has('error');
+      if (query.getAll('state').length !== 1 || !query.get('state')?.trim() || (!granted && !denied)) {
+        title.textContent = '授权未完成';
+        message.textContent = '请回到桌面软件，重新点击官方登录。';
+        return;
+      }
+      const values = new URLSearchParams(denied ? {error: 'access_denied', state: query.get('state')} : {code: query.get('code'), state: query.get('state')});
+      link.href = 'd2loot://oauth?' + values.toString();
+      if (link.href.length > 4096) {
+        link.removeAttribute('href');
+        title.textContent = '授权结果无效';
+        message.textContent = '请回到桌面软件重新连接账号。';
+        return;
+      }
+      title.textContent = denied ? '已取消授权' : '正在返回 D2 Loot Tool…';
+      message.textContent = '请在浏览器提示中允许打开软件。如果没有自动返回，请点击下面的按钮。此页面不保存授权信息。';
+      link.hidden = false;
+      // Some browsers require a user gesture for custom schemes; always retain the button.
+      setTimeout(() => {
+        try { location.replace(link.href); } catch { /* The visible button remains usable. */ }
+      }, 200);
+    })();
+  </script>
+</body>
+</html>
