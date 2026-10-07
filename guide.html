@@ -30,11 +30,12 @@
     <h2>遇到问题时</h2>
     <article><h3>网页没有自动打开软件？</h3><p>保持软件开启，点击回调页面的“返回 D2 Loot Tool”，允许浏览器打开应用。仍无法返回时，回到主窗口点击“取消连接”，再进入设置重新绑定。</p></article>
     <article><h3>关闭了授权网页，或者登录超时？</h3><p>主窗口的“再次打开授权页”可继续当前连接。十分钟内没有完成会结束请求；之后从设置重新绑定即可。</p></article>
-    <article><h3>重启软件后，或授权过期后需要再登录？</h3><p>需要。当前版本只在本次运行期间保留授权；重新打开软件或授权过期后，在设置中重新绑定。库存记录仍保存在本机，已有记录不会因此被当成新掉落。</p></article>
+    <article><h3>重启软件后还需要登录吗？</h3><p>设置中显示“自动续期已启用”的新版会加密保存登录，重启后自动恢复，短期授权到期时自动续期。网络暂时不可用会等待重试；长期授权失效或你撤销权限时，才需要在设置中重新绑定。旧版短期登录仍需重启后重新授权。</p></article>
+    <article><h3>怎样解除绑定？登录信息保存在哪里？</h3><p>点击<strong>设置 → 解除绑定</strong>，删除本机长期登录凭证，并尝试删除该设备的授权服务会话；库存历史仍保留。本机凭证由 Windows 用户加密保护，服务端加密保存续期令牌，游戏密码不会交给本工具。完整撤销本应用的 Bungie 权限请到 Bungie 账号设置处理。</p></article>
     <article><h3>是否需要 DIM 账号？会改动装备吗？</h3><p>无需登录 DIM。装备推荐使用公开的 DIM Wishlist 数据；本工具只读取库存，不转移、装备、锁定或分解物品。</p></article>
     <article><h3>绑定成功但没有新装备？</h3><p>首次同步后，只有新发现的装备才会出现。可以点击“刷新”检查，留意主窗口的网络或授权提示。请确认所选平台有你的 Destiny 2 角色。</p></article>
   </section>
-  <footer>适用于 D2 Loot Tool 0.1.7 · <a href="https://www.bungie.net/" rel="noreferrer">Bungie 官网</a> · <a href="https://github.com/Bungie-net/api/wiki/OAuth-Documentation" rel="noreferrer">官方授权说明</a><br>此指南页不接收登录信息。账号绑定应从软件的设置页发起。</footer>
+  <footer>适用于 D2 Loot Tool 0.1.8（兼容旧版绑定步骤） · <a href="https://www.bungie.net/" rel="noreferrer">Bungie 官网</a> · <a href="https://github.com/Bungie-net/api/wiki/OAuth-Documentation" rel="noreferrer">官方授权说明</a><br>此指南页不接收登录信息。账号绑定应从软件的设置页发起。</footer>
 </main>
 </body>
 </html>
