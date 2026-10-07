@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <title>D2 Loot Tool · 账号绑定指南</title>
+  <style>
+    :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#111;color:#e8e8e8;font:16px/1.8 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:780px;margin:0 auto;padding:54px 24px 70px}header{border-bottom:1px solid #444;padding-bottom:28px;margin-bottom:30px}.eyebrow{font-size:12px;letter-spacing:.14em;color:#aaa}h1{font-size:clamp(28px,5vw,38px);line-height:1.3;margin:12px 0 18px}h2{font-size:22px;margin:0 0 12px}h3{font-size:18px;margin:0 0 6px}p{margin:8px 0;color:#bbb}strong{color:#eee}a{color:#9cdbbd;text-underline-offset:4px}a:focus-visible{outline:2px solid #eee;outline-offset:4px}.button{display:inline-block;padding:9px 18px;background:#303030;color:#f3f3f3;border:1px solid #777;text-decoration:none;margin-top:14px}.steps{list-style:none;padding:0;counter-reset:step}.steps li{counter-increment:step;display:grid;grid-template-columns:40px 1fr;gap:16px;border:1px solid #444;background:#191919;padding:22px;margin:12px 0}.steps li:before{content:counter(step);width:36px;height:36px;line-height:36px;text-align:center;background:#303030;color:#eee}.note{border-left:3px solid #80baa0;padding:10px 16px;background:#191919;margin:24px 0}.faq{margin-top:34px}.faq article{border-top:1px solid #333;padding:18px 0}.faq h3{font-size:16px}footer{font-size:13px;color:#999;border-top:1px solid #444;margin-top:30px;padding-top:18px}@media(max-width:480px){main{padding:30px 16px}.steps li{padding:16px;gap:12px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">D2 LOOT TOOL / GET STARTED</div>
+    <h1>绑定账号，只需三步</h1>
+    <p>软件已经准备好连接信息。你只需要登录自己的 Bungie 账号并授权读取库存，<strong>无需申请 API、填写网址或复制令牌</strong>。</p>
+    <a class="button" href="#steps">查看绑定步骤 ↓</a>
+  </header>
+  <section id="steps" aria-label="账号绑定步骤">
+    <ol class="steps">
+      <li><div><h2>在软件中点击绑定</h2><p>解压整个发布包，打开 <strong>D2LootTool.exe</strong>。点击主窗口的 <strong>设置 → 绑定 Bungie 账号</strong>，系统浏览器会打开 Bungie 官方授权页面。绑定期间保持软件运行。</p></div></li>
+      <li><div><h2>登录并允许读取库存</h2><p>选择与你的 Destiny 2 账号关联的平台，例如 Steam、PlayStation 或 Xbox，完成官方登录。核对应用名称 <strong>D2LootTool</strong>，允许读取 Destiny 库存和仓库。</p><p>登录在官方网页完成，软件内无需输入游戏密码。</p></div></li>
+      <li><div><h2>允许浏览器返回软件</h2><p>授权后，网页会尝试打开 D2 Loot Tool。在浏览器提示中点击 <strong>打开 / 允许</strong>。如果没有自动返回，点击网页上的 <strong>返回 D2 Loot Tool</strong>。</p><p>回到软件后等待首次同步。若出现多个独立游戏账号，在主窗口选择要监测的平台；跨平台存档会优先采用有效主账号。</p></div></li>
+    </ol>
+  </section>
+  <div class="note"><strong>首次同步不会弹出旧装备。</strong><p>软件会先记录现有库存，之后定期检查新获得的装备。新武器进入通知队列，护甲只进入最近装备列表。官方数据同步可能有延迟。</p></div>
+  <section class="faq" aria-label="常见问题">
+    <h2>遇到问题时</h2>
+    <article><h3>网页没有自动打开软件？</h3><p>保持软件开启，点击回调页面的“返回 D2 Loot Tool”，允许浏览器打开应用。仍无法返回时，回到主窗口点击“取消连接”，再进入设置重新绑定。</p></article>
+    <article><h3>关闭了授权网页，或者登录超时？</h3><p>主窗口的“再次打开授权页”可继续当前连接。十分钟内没有完成会结束请求；之后从设置重新绑定即可。</p></article>
+    <article><h3>重启软件后，或授权过期后需要再登录？</h3><p>需要。当前版本只在本次运行期间保留授权；重新打开软件或授权过期后，在设置中重新绑定。库存记录仍保存在本机，已有记录不会因此被当成新掉落。</p></article>
+    <article><h3>是否需要 DIM 账号？会改动装备吗？</h3><p>无需登录 DIM。装备推荐使用公开的 DIM Wishlist 数据；本工具只读取库存，不转移、装备、锁定或分解物品。</p></article>
+    <article><h3>绑定成功但没有新装备？</h3><p>首次同步后，只有新发现的装备才会出现。可以点击“刷新”检查，留意主窗口的网络或授权提示。请确认所选平台有你的 Destiny 2 角色。</p></article>
+  </section>
+  <footer>适用于 D2 Loot Tool 0.1.7 · <a href="https://www.bungie.net/" rel="noreferrer">Bungie 官网</a> · <a href="https://github.com/Bungie-net/api/wiki/OAuth-Documentation" rel="noreferrer">官方授权说明</a><br>此指南页不接收登录信息。账号绑定应从软件的设置页发起。</footer>
+</main>
+</body>
+</html>
